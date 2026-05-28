@@ -1,0 +1,8 @@
+{
+  "name": "ARES-X OS",
+  "description": "Resilient Enterprise Autonomous AI Operating System Telemetry Dashboard",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

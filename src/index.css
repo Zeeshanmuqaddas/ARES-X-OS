@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "JetBrains Mono", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-ares-black: var(--theme-black);
+  --color-ares-cyan: var(--theme-cyan);
+  --color-ares-magenta: var(--theme-magenta);
+  --color-ares-green: var(--theme-green);
+  --color-ares-red: var(--theme-red);
+  --color-ares-amber: var(--theme-amber);
+}
+
+@layer base {
+  :root {
+    --theme-black: #050505;
+    --theme-cyan: #00f0ff;
+    --theme-magenta: #b026ff;
+    --theme-green: #00ff41;
+    --theme-red: #ff003c;
+    --theme-amber: #ffb000;
+  }
+
+  :root[data-theme="terminal-green"] {
+    --theme-black: #000a02;
+    --theme-cyan: #00ff41;
+    --theme-magenta: #ffb000;
+    --theme-green: #00ff41;
+    --theme-red: #ff003c;
+    --theme-amber: #b026ff;
+  }
+
+  :root[data-theme="deep-space-blue"] {
+    --theme-black: #01040a;
+    --theme-cyan: #0088ff;
+    --theme-magenta: #00f0ff;
+    --theme-green: #00ff41;
+    --theme-red: #ff003c;
+    --theme-amber: #ffb000;
+  }
+
+  body {
+    @apply bg-ares-black text-ares-cyan font-mono overflow-hidden;
+    background-image: 
+      linear-gradient(color-mix(in srgb, var(--theme-cyan) 3%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--theme-cyan) 3%, transparent) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center center;
+  }
+}
+
+.glass-panel {
+  @apply bg-black/40 backdrop-blur-md border border-ares-cyan/20;
+  box-shadow: 0 0 15px color-mix(in srgb, var(--theme-cyan) 5%, transparent);
+}
+
+.glitch-text {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% { transform: translate(2px,0) skew(0deg); }
+  4%, 60% { transform: translate(-2px,0) skew(0deg); }
+  62% { transform: translate(0,0) skew(5deg); }
+}
+
+/* Custom Scrollbar for Terminal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-black/50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ares-cyan/30 rounded;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ares-cyan/60;
+}
