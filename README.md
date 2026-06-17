@@ -1,3 +1,7 @@
+ARES-X OS is an advanced autonomous Agentic AI Operating System designed to orchestrate multiple AI agents, LLMs, workflows, and enterprise automation in real time.
+
+
+
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
